@@ -2,7 +2,7 @@ deploy:
   image: alpine:latest
 
   tags:
-    - k3s
+    - main-runner
 
   stage: deploy
 
