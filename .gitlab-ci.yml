@@ -1,0 +1,7 @@
+stages:
+  - build
+
+build-image:
+  stage: build
+  script:
+    - docker build -t belajar-nginx .
