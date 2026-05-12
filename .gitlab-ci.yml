@@ -1,7 +1,11 @@
-stages:
-  - build
+deploy:
+  image: bitnami/kubectl:latest
 
-build-image:
-  stage: build
+  stage: deploy
+
+  variables:
+    KUBECONFIG: /etc/rancher/k3s/k3s.yaml
+
   script:
-    - docker build -t belajar-nginx .
+    - kubectl get nodes
+    - kubectl apply -f deployment.yaml
